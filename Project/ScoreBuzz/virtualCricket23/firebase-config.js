@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebas
 import { getDatabase } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnH5baSfwvKWTyZyK_G958ChQTGWzle_4",
+  apiKey: "",
   authDomain: "scorebuzz-2025.firebaseapp.com",
   projectId: "scorebuzz-2025",
   storageBucket: "scorebuzz-2025.firebasestorage.app",
@@ -17,3 +17,4 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 export { db };
+
