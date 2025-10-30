@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cricket Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="text-center" style="margin: 20px 0;">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#playerModal">
+      Create Player
+    </button>
+  </div>
+
+  <div class="gender-tabs-container">
+    <div class="gender-tab" onclick="switchTab('gender', 0)">Men</div>
+    <div class="gender-tab" onclick="switchTab('gender', 1)">Women</div>
+  </div>
+
+  <div class="role-tabs-container" id="roleTabsContainer">
+    <div class="role-tab" onclick="switchTab('role', 'all')">All Players</div>
+    <div class="role-tab" onclick="switchTab('role', 'batter')">Batter</div>
+    <div class="role-tab" onclick="switchTab('role', 'bowler')">Bowler</div>
+    <div class="role-tab" onclick="switchTab('role', 'wicketkeeper')">Wicket Keeper</div>
+    <div class="role-tab" onclick="switchTab('role', 'allrounder')">All Rounder</div>
+  </div>
+
+  <div class="table-container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>SNo</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>Hand</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="playerTable">
+        <tr><td colspan="8" class="text-center">No players found</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="playerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h4 class="modal-title" id="formTitle">Register Cricket Player</h4></div>
+        <div class="modal-body">
+          <form id="playerForm">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="form-control" id="name" required />
+              <div id="nameError" class="error-text"></div>
+            </div>
+            <div class="form-group">
+              <label>Gender:</label>
+              <input type="radio" name="gender" value="male" /> Male
+              <input type="radio" name="gender" value="female" /> Female
+              <div id="genderError" class="error-text"></div>
+            </div>
+            <div class="form-group">
+              <label>Date of Birth:</label>
+              <input type="date" class="form-control" id="dob" required />
+              <div id="dobError" class="error-text"></div>
+            </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" class="form-control" id="emailinput" required />
+              <div id="emailinputError" class="error-text"></div>
+            </div>
+            <div class="form-group">
+              <label>Role:</label>
+              <select class="form-control" id="roleDropdown" required>
+                <option value="">--Select--</option>
+                <option value="batter">Batter</option>
+                <option value="bowler">Bowler</option>
+                <option value="wicketkeeper">Wicket Keeper</option>
+                <option value="allrounder">All Rounder</option>
+              </select>
+              <div id="roleDropdownError" class="error-text"></div>
+            </div>
+            <div class="form-group" id="handednessGroup">
+              <label>Handedness:</label>
+              <select class="form-control" id="handednessDropdown">
+                <option value="">Select Handedness</option>
+                <option value="right-hand">Right-Hand</option>
+                <option value="left-hand">Left-Hand</option>
+              </select>
+              <div id="handednessDropdownError" class="error-text"></div>
+            </div>
+            <button type="button" class="btn btn-success" id="saveBtn" onclick="savePlayer()">Save</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="c.js"></script>
+
+</body>
+</html>
