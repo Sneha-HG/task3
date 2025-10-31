@@ -110,7 +110,7 @@ function deletePlayer(id) {
 //table rendering & filtering//
 function refreshTable() {
     const tableBody = $('#playerTable');
-    let filteredPlayers = [...players];
+    let filteredPlayers = [...players];//copy of players//
     //conditional filetring//
     if (currentGenderFilter === 'male') {
         filteredPlayers = filteredPlayers.filter(p => p.gender === 'male');
