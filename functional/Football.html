@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cricket Registration</title>
+  <title>Football Registration</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <div class="text-center" style="margin: 20px 0;">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#playerModal">
       Create Player
-    </button>
+    </button><!--when clicked opens a form with respective sport-->
   </div>
-
   <div class="gender-tabs-container">
     <div class="gender-tab" onclick="switchTab('gender', 0)">Men</div>
     <div class="gender-tab" onclick="switchTab('gender', 1)">Women</div>
   </div>
 
-  <div class="role-tabs-container" id="roleTabsContainer">
+  <div class="role-tabs-container">
     <div class="role-tab" onclick="switchTab('role', 'all')">All Players</div>
-    <div class="role-tab" onclick="switchTab('role', 'batter')">Batter</div>
-    <div class="role-tab" onclick="switchTab('role', 'bowler')">Bowler</div>
-    <div class="role-tab" onclick="switchTab('role', 'wicketkeeper')">Wicket Keeper</div>
-    <div class="role-tab" onclick="switchTab('role', 'allrounder')">All Rounder</div>
+    <div class="role-tab" onclick="switchTab('role', 'goalkeeper')">Goalkeeper</div>
+    <div class="role-tab" onclick="switchTab('role', 'midfielder')">Midfielder</div>
+    <div class="role-tab" onclick="switchTab('role', 'attacker')">Attacker</div>
+    <div class="role-tab" onclick="switchTab('role', 'defender')">Defender</div>
   </div>
 
   <div class="table-container">
@@ -37,13 +37,15 @@
           <th>Gender</th>
           <th>Age</th>
           <th>Role</th>
-          <th>Hand</th>
+          <th>position</th>
           <th>Email</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody id="playerTable">
-        <tr><td colspan="8" class="text-center">No players found</td></tr>
+        <tr>
+          <td colspan="8" class="text-center">No players found</td>
+        </tr> <!--before registering & when no tabs /roles are choosen -->
       </tbody>
     </table>
   </div>
@@ -52,7 +54,9 @@
   <div id="playerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header"><h4 class="modal-title" id="formTitle">Register Cricket Player</h4></div>
+        <div class="modal-header">
+          <h4 class="modal-title" id="formTitle">Register Football Player</h4>
+        </div>
         <div class="modal-body">
           <form id="playerForm">
             <div class="form-group">
@@ -80,21 +84,28 @@
               <label>Role:</label>
               <select class="form-control" id="roleDropdown" required>
                 <option value="">--Select--</option>
-                <option value="batter">Batter</option>
-                <option value="bowler">Bowler</option>
-                <option value="wicketkeeper">Wicket Keeper</option>
-                <option value="allrounder">All Rounder</option>
+                <option value="goalkeeper">Goalkeeper</option>
+                <option value="midfielder">Midfielder</option>
+                <option value="attacker">Attacker</option>
+                <option value="defender">Defender</option>
               </select>
               <div id="roleDropdownError" class="error-text"></div>
             </div>
-            <div class="form-group" id="handednessGroup">
-              <label>Handedness:</label>
-              <select class="form-control" id="handednessDropdown">
-                <option value="">Select Handedness</option>
-                <option value="right-hand">Right-Hand</option>
-                <option value="left-hand">Left-Hand</option>
+            <div class="form-group">
+              <label>position:</label>
+              <select class="form-control" id="positionDropdown" required>
+                <option value="">--Select position--</option>
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="forward">Forward</option>
+                <option value="striker">Striker</option>
+                <option value="winger">Winger</option>
+                <option value="central">Central</option>
+                <option value="defensive">Defensive</option>
+                <option value="attacking">Attacking</option>
+                <option value="wide">Wide</option>
               </select>
-              <div id="handednessDropdownError" class="error-text"></div>
+              <div id="positionDropdownError" class="error-text"></div>
             </div>
             <button type="button" class="btn btn-success" id="saveBtn" onclick="savePlayer()">Save</button>
           </form>
@@ -109,7 +120,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="module" src="firebase-config.js"></script>
-  <script type="module" src="c.js"></script>
-
+  <script type="module" src="f.js"></script>
 </body>
+
 </html>
