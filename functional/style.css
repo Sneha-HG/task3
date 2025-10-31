@@ -1,0 +1,178 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+body.landing-page{
+  background-image: url('image/2sports.png');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #a8c0ff, #f8f9fa);
+  padding: 6px 16px;
+  min-height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.navbar-brand {
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+
+.btn-primary1,
+.btn-primary2,
+.btn-primary,
+.btn-success {
+  background-color: #6c63ff;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary1:hover,
+.btn-primary2:hover,
+.btn-primary:hover,
+.btn-success:hover {
+  background-color: #4e4cb8;
+}
+
+.btn-default {
+  border-radius: 6px;
+}
+
+/* Tabs */
+.gender-tabs-container,
+.role-tabs-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gender-tab,
+.role-tab {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #6c63ff;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.gender-tab:hover,
+.role-tab:hover {
+  background-color: #4e4cb8;
+  transform: scale(1.03);
+}
+
+.active-tab {
+  background-color: white;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+}
+
+/* Table */
+.table-container {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.table {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #6c63ff;
+  color: white;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Modal */
+.modal-header {
+  background-color: #4e4cb8;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+/* Form */
+.form-group label {
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 6px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.invalid {
+  border-color: red;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+
+  .gender-tabs-container,
+  .role-tabs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

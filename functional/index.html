@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScoreBuzz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" /><!--single css file for all 3 html files-->
+</head>
+  <body class="landing-page">
+    <nav class="navbar">
+    <div class="navbar-brand">ScoreBuzz</div>
+  </nav>
+
+  <div class="main-container">
+    <div class="button-group">
+      <a href="Cricket.html" class="btn btn-lg btn-primary1">Cricket Registration</a>
+      <a href="Football.html" class="btn btn-lg btn-primary2">Football Registration</a>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js"></script>
+
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="f.js"></script><!--separate js file for football-->
+  <script type="module" src="c.js"></script><!--separate js file for cricket-->
+
+  </body>
+</html>
